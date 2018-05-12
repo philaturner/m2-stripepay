@@ -28,7 +28,6 @@ define(
 
                 if (event) event.preventDefault();
 
-
                 //disable button and start loader
                 this.isPlaceOrderActionAllowed(false);
                 screenLoader.startLoader();
