@@ -7,8 +7,6 @@ use PhilTurner\StripePay\Gateway\Config\Config;
 
 class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
-    const CODE = 'stripepay';
-
     protected $config;
 
     public function __construct(
@@ -21,7 +19,7 @@ class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
     {
         return [
             'payment' => [
-                'stripepay' => [
+                Config::CODE => [
                     'publishableKey' => $this->getPublishableKey(),
                 ],
             ],
