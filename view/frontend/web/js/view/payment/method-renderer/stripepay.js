@@ -70,8 +70,7 @@ define(
 
             initialize: function(){
                 this._super();
-                //TODO use get method to get key from config
-                this.stripe = Stripe('pk_test_LhdtmRoQafJFa6LeAq19Bt1P');
+                this.stripe = Stripe(this.getPublishableKey());
             },
 
             initStripe: function() {
@@ -133,8 +132,8 @@ define(
                 return stripeAddressData;
             },
 
-            getCode: function(){
-                return 'stripepay';
+            getPublishableKey: function(){
+                return window.checkoutConfig.payment.stripepay.publishableKey;
             }
         });
     }
